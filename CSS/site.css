@@ -1,8 +1,21 @@
 :root {
-    --primary-color: rgb(30, 81, 156);
-    --secondary-color: rgb(118, 19, 230);
+    --primary-color: #2b7781;
+    --secondary-color: #336b87;
     --dark-color: rgb(36, 36, 36);
     --white-color: rgb(255, 255, 255);
+}
+
+.odd {
+
+    font-weight: 100;
+
+}
+
+
+.even {
+
+    font-weight: bolder;
+
 }
 
 footer {
@@ -44,11 +57,18 @@ h6 {
 
 code[class*="language-"],
 pre[class*="language-"] {
-white-space: pre-wrap;
-word-break: break-all;
-word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
+
+
+.logofont {
+    font-family: video-cond, serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 main>.container {
     padding: 60px 15px 0;
@@ -88,4 +108,3 @@ main>.container {
         font-size: 18vw;
     }
 }
-

@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>#AppName#: A Coding Project By Benjamin Baker</title>
+    <title>RaceTo100: A Coding Project By Benjamin Baker</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,14 +15,16 @@
     <link href="/CSS/site.css" rel="stylesheet">
     <link href="/CSS/prism.css" rel="stylesheet">
     <link href="IMG/favicon-32x32.png" rel="icon" type="image/png">
+
+    <link rel="stylesheet" href="https://use.typekit.net/otq6rkm.css">
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- ----Nav Sectoion----  -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="IMG/hundoLogo.svg" class="d-inline-block align-text-top"
-                    width="30" height="24" alt="Baker Logo"> APPLICATION NAME</a>
+            <a class="navbar-brand logofont" href="#"><img src="IMG/hundoLogo.svg" class="d-inline-block align-text-top"
+                    width="30" height="24" alt="Baker Logo"> RaceTo100</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,23 +54,86 @@
     <!-- ----Main Sectoion----  -->
     <main class="flex-shrink-0">
         <div class="container  py-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for RaceTo100</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                            //Call Hello Javasript
-                            function hellojavascript() {
-                                alert('Hello Javascript');
+                        // Get Values From The Page
+                        // starts or controller function
+                        function getValues() {
+                            //get values from page
+                            let startValue = document.getElementById("valueStart").value;
+                            let endValue = document.getElementById("valueEnd").value;
+                            // Valadition Is Needed For Input
+                            //parse into integers
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+                        
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                // call generateNumbers
+                                numbers = generateNumbers(startValue, endValue);
+                                //call displaynumbers
+                                displayNumbers(numbers);
+                            } else {
+                                alert("Enter Intergers Only")
                             }
+                        
+                        
+                        
+                        }
+                        
+                        
+                        // Generate Numbers Between Start Value and End Value
+                        // logic function(s)
+                        function generateNumbers(sValue, eValue) {
+                        
+                            let numbers = [];
+                        
+                        
+                            // get all numbers fron start to end
+                            for (let i = sValue; i <= eValue; i++) {
+                                numbers.push(i);
+                            }
+                        
+                            return numbers;
+                        }
+                        
+                        // Display The Numbers And Mark The Even Nubmers Bold
+                        // display or view function
+                        function displayNumbers(numbers) {
+                        
+                            let templateRows = "";
+                        
+                            for (let i = 0; i < numbers.length; i++) {
+                                let className = "even";
+                        
+                                let number = numbers[i];
+                                if(number % 2 == 0) {
+                                    className = "even";
+                                } else {
+                                    className = "odd";
+                                }
+                               
+                             templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>`;
+                                
+                             
+                                
+                            }
+                        
+                            document.getElementById("results").innerHTML = templateRows;
+                        
+                        
+                        }
                     </code>
                     </pre>
                 </div>
-                <div class="col-lg-4" >
-                    <p>The Code Is Structed In One Function</p>
-                    <h5>Hello Javascript</h5>
-                    <p>Hello Javascript Is A Function That Displays An Alert With A Message "Hello Javascript"</p>
+                <div class="col-lg-4 gy-2">
+                    <h5>Bold Numbers JavaScript</h5>
+                    <p>The code is structured in five functions: getValues(), generateNumbers(),
+                        and displayNumbers()</p>
+                    <p>This program displays a user selected input for a starting number from 0 and a ending number up to 100 and makes each number that is even bold.</p>
                 </div>
-                
+
             </div>
         </div>
     </main>
