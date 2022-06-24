@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #2b7781;
-    --secondary-color: #336b87;
+    --primary-color: #0b4897;
+    --secondary-color: #3a5461;
     --dark-color: rgb(36, 36, 36);
     --white-color: rgb(255, 255, 255);
 }
@@ -64,11 +64,7 @@ pre[class*="language-"] {
 
 
 
-.logofont {
-    font-family: video-cond, serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
 
 main>.container {
     padding: 60px 15px 0;
