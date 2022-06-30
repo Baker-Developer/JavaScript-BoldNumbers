@@ -99,6 +99,14 @@ main>.container {
     color: var(--secondary-color)
 }
 
+
+@media screen and (max-width: 991.33px) {
+    .border-end {
+        border: none !important;
+    }
+}
+
+
 @media screen and (max-width: 400px) {
     .responsiveicon {
         font-size: 18vw;
